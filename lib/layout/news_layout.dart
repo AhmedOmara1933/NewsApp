@@ -22,6 +22,7 @@ class NewsLayout extends StatelessWidget {
               onItemSelected: (value) {
                 cubit.changeBottomNavBar(value);
               }),
+          body: cubit.screans[cubit.currentIndex],
         );
       },
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Business extends StatelessWidget {
-  const Business({super.key});
+class Science extends StatelessWidget {
+  const Science({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Business extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-            'Business'
+            'Science'
         ),
       ),
     );
