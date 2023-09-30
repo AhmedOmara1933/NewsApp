@@ -1,12 +1,10 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:news_project/modules/business.dart';
 import 'package:news_project/modules/science.dart';
 import 'package:news_project/modules/settings.dart';
 import 'package:news_project/modules/sports.dart';
+import 'package:news_project/shared/cubit/news_state.dart';
 
-part 'news_state.dart';
 
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsInitial());

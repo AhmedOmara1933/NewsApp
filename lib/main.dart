@@ -1,36 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_project/shared/cubit/news_cubit.dart';
-import 'layout/news_layout.dart';
+import 'package:news_project/shared/cubit/bloc_observer.dart';
+import 'package:news_project/shared/network/remote/dio_helper.dart';
+import 'package:news_project/src/app_root.dart';
 
 void main() {
-  runApp(const MyApp());
+  Bloc.observer = MyBlocObserver();
+  DioHelper.init();
+
+  runApp(const AppRoot());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => NewsCubit(),)
-        ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              unselectedItemColor: Colors.grey[600]
-            )
-          ),
-          home: NewsLayout(),
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
