@@ -1,18 +1,41 @@
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_project/shared/cubit/news_cubit.dart';
+import 'package:news_project/shared/cubit/news_state.dart';
+import '../shared/components/components/default_card.dart';
 
+// ignore: must_be_immutable
 class Business extends StatelessWidget {
   const Business({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-      ),
-      body: Center(
-        child: Text(
-            'Business'
-        ),
-      ),
+    return BlocConsumer<NewsCubit, NewsState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      builder: (context, state)  {
+        var cubit=NewsCubit.get(context);
+        var list=cubit.business;
+        return ConditionalBuilder(
+            condition: state is! AppGetBusinessLoadingState,
+            builder: (context) => ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) =>DefaultCard(model:list[index]),
+                separatorBuilder: (context, index) => Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                  height: 1.0,
+                  color: Colors.grey[400],
+                ),
+                itemCount:list.length
+            ),
+            fallback: (context) =>const Center(child: CircularProgressIndicator(
+              color: Colors.deepOrange,
+            ))
+        );
+      },
     );
+
   }
 }

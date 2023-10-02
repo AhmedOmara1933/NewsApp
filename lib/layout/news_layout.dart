@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_project/shared/components/components/bottomNavBar.dart';
 import 'package:news_project/shared/cubit/news_cubit.dart';
 import 'package:news_project/shared/cubit/news_state.dart';
-import 'package:news_project/shared/network/remote/dio_helper.dart';
 
 class NewsLayout extends StatelessWidget {
   const NewsLayout({Key? key}) : super(key: key);
@@ -17,6 +16,24 @@ class NewsLayout extends StatelessWidget {
       builder: (context, state) {
         var cubit = NewsCubit.get(context);
         return Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title:Container(
+              padding: EdgeInsets.symmetric(horizontal:60.0,vertical: 10.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.0),
+                color: Colors.orange.withOpacity(0.4)
+              ),
+              child: Text(
+                cubit.titles[cubit.currentIndex],
+                style:TextStyle(
+                  color: Colors.grey[700],
+                  fontWeight: FontWeight.w900,
+                  fontSize: 25.0
+                ) ,
+              ),
+            )
+          ),
           bottomNavigationBar: BottomNavBar(
               selectedItemColor: Colors.orange,
               unselectedItemColor: Colors.grey[600],
@@ -24,24 +41,6 @@ class NewsLayout extends StatelessWidget {
               onItemSelected: (value) {
                 cubit.changeBottomNavBar(value);
               }),
-          floatingActionButton: FloatingActionButton(
-            onPressed: (){
-             DioHelper.getData(
-                 url: " v2/top-headlines",
-                 query: {
-                   'country': 'eg',
-                   'apiKey':'3c7b76511d6d41ba85797bf56777f19d',
-                   'category':'business'
-                 }).then((value){
-                   print( value.data.toString());
-             }).catchError((error){
-               print('error is $error');
-             });
-            },
-            child: Icon(
-              Icons.add
-            ),
-          ),
           body: cubit.screans[cubit.currentIndex],
         );
       },

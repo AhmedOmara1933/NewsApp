@@ -1,3 +1,1 @@
-//https://newsapi.org/
-// v2/top-headlines
-// ?country=eg&apiKey=3c7b76511d6d41ba85797bf56777f19d&category=business
+//https://newsapi.org/v2/top-headlines?country=us&apiKey=049c1660a02b492d8d3b37b503608683
