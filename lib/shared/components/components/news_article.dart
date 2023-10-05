@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class DefaultCard extends StatelessWidget {
+class NewsArticle extends StatelessWidget {
  final Map model;
-  const DefaultCard({super.key, required this.model});
+  const NewsArticle({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class DefaultCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     '${model['title']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                     maxLines: 5,
@@ -39,7 +39,7 @@ class DefaultCard extends StatelessWidget {
                 ),
                 Text(
                   '${model['publishedAt']}',
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w900),
+                  style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w900),
                 )
               ],
             ),

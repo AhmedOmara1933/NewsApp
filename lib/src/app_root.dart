@@ -23,11 +23,12 @@ class AppRoot extends StatelessWidget {
                 unselectedItemColor: Colors.grey[600]),
             appBarTheme: const AppBarTheme(
                 systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor: Colors.white,
+                  statusBarColor:Colors.white,
                   statusBarIconBrightness: Brightness.dark
                 ),
                 backgroundColor: Colors.white,
-                elevation: 0.0),
+                elevation: 0.0
+            ),
             scaffoldBackgroundColor: Colors.white,
             floatingActionButtonTheme: const FloatingActionButtonThemeData(
                 backgroundColor: Colors.deepOrange)),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_project/shared/cubit/news_cubit.dart';
 import 'package:news_project/shared/cubit/news_state.dart';
+import '../shared/components/components/news_article.dart';
 
-import '../shared/components/components/default_card.dart';
 
 
 // ignore: must_be_immutable
@@ -24,7 +24,7 @@ class Science extends StatelessWidget {
             condition: state is! AppGetScienceLoadingState,
             builder: (context) => ListView.separated(
                 physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) => DefaultCard(model:list[index]),
+                itemBuilder: (context, index) => NewsArticle(model:list[index]),
                 separatorBuilder: (context, index) => Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   height: 1.0,

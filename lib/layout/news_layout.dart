@@ -17,22 +17,27 @@ class NewsLayout extends StatelessWidget {
         var cubit = NewsCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            centerTitle: true,
-            title:Container(
-              padding: EdgeInsets.symmetric(horizontal:60.0,vertical: 10.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Colors.orange.withOpacity(0.4)
+            title: const Text(
+              'News App',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 25.0,
+                fontWeight: FontWeight.w800
+
               ),
-              child: Text(
-                cubit.titles[cubit.currentIndex],
-                style:TextStyle(
-                  color: Colors.grey[700],
-                  fontWeight: FontWeight.w900,
-                  fontSize: 25.0
-                ) ,
-              ),
-            )
+            ),
+            actions: [
+              IconButton(
+                  onPressed: (){},
+                  icon: const Icon(
+                    Icons.search,
+                    color: Colors.black,
+                    size: 30.0,
+
+                  )
+              )
+            ],
+
           ),
           bottomNavigationBar: BottomNavBar(
               selectedItemColor: Colors.orange,
