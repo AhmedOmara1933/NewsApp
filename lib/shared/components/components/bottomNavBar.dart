@@ -23,22 +23,26 @@ class BottomNavBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: BottomNavyBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.grey[300],
         selectedIndex: selectedIndex,
         onItemSelected: onItemSelected,
         containerHeight: 70,
         iconSize: 30.0,
         items: [
           BottomNavyBarItem(
+
               inactiveColor: unselectedItemColor,
               activeColor: selectedItemColor!,
               icon: const Icon(
                 Icons.business,
               ),
               title: const Text(
-                'Business',
+                'Business',style: TextStyle(
+                fontSize: 16.0
               ),
-              textAlign: TextAlign.center),
+              ),
+              textAlign: TextAlign.center,
+          ),
           BottomNavyBarItem(
             inactiveColor: unselectedItemColor,
             activeColor: selectedItemColor!,
@@ -53,15 +57,7 @@ class BottomNavBar extends StatelessWidget {
             icon: const Icon(
               Icons.science,
             ),
-            title: const Text('Science', textAlign: TextAlign.center),
-          ),
-          BottomNavyBarItem(
-            inactiveColor: unselectedItemColor,
-            activeColor: selectedItemColor!,
-            icon: const Icon(
-              Icons.settings,
-            ),
-            title: const Text('Settings', textAlign: TextAlign.center),
+            title: const Text('Science', textAlign: TextAlign.center,),
           ),
         ],
       ),

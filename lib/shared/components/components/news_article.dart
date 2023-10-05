@@ -30,16 +30,18 @@ class NewsArticle extends StatelessWidget {
                 Expanded(
                   child: Text(
                     '${model['title']}',
-                    style: const TextStyle(
-                      fontSize: 20.0,
-                    ),
-                    maxLines: 5,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 Text(
                   '${model['publishedAt']}',
-                  style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w900),
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.grey[600] ,
+                      fontWeight: FontWeight.w900
+                  ),
                 )
               ],
             ),

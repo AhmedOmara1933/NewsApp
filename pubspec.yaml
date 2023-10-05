@@ -35,7 +35,7 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   dio: ^5.3.3
   conditional_builder_null_safety: ^0.0.6
-
+  google_fonts: ^6.1.0
 
 
 

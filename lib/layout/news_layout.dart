@@ -19,29 +19,25 @@ class NewsLayout extends StatelessWidget {
           appBar: AppBar(
             title: const Text(
               'News App',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 25.0,
-                fontWeight: FontWeight.w800
-
-              ),
             ),
             actions: [
               IconButton(
-                  onPressed: (){},
+                  onPressed: () {},
                   icon: const Icon(
                     Icons.search,
-                    color: Colors.black,
-                    size: 30.0,
-
-                  )
-              )
+                  )),
+              IconButton(
+                  onPressed: () {
+                    cubit.changeAppMode();
+                  },
+                  icon: const Icon(
+                    Icons.brightness_4_outlined,
+                  )),
             ],
-
           ),
           bottomNavigationBar: BottomNavBar(
               selectedItemColor: Colors.orange,
-              unselectedItemColor: Colors.grey[600],
+              unselectedItemColor: Colors.grey[800],
               selectedIndex: cubit.currentIndex,
               onItemSelected: (value) {
                 cubit.changeBottomNavBar(value);

@@ -11,3 +11,8 @@ void main()
 
   runApp(const AppRoot());
 }
+
+
+//change bottomNavBar
+//error in run
+//error in cutting network
