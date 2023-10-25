@@ -79,6 +79,9 @@ class NewsCubit extends Cubit<NewsState> {
     });
   }
 
+
+
+
 //todo//////////////////////////////////////////////////////////////////////
 
   bool isBrightness = false;

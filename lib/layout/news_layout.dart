@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_project/modules/search.dart';
 import 'package:news_project/shared/components/components/bottomNavBar.dart';
+import 'package:news_project/shared/components/functions/functions.dart';
 import 'package:news_project/shared/cubit/news_cubit.dart';
 import 'package:news_project/shared/cubit/news_state.dart';
 
@@ -22,7 +24,9 @@ class NewsLayout extends StatelessWidget {
             ),
             actions: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateTo(context, const Search());
+                  },
                   icon: const Icon(
                     Icons.search,
                   )),

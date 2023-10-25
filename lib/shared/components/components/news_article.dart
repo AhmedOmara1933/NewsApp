@@ -23,7 +23,7 @@ class NewsArticle extends StatelessWidget {
                     ),
                     fit: BoxFit.cover)),
           ),
-           Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
