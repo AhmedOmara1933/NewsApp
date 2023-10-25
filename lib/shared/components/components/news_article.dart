@@ -31,7 +31,7 @@ class NewsArticle extends StatelessWidget {
                   child: Text(
                     '${model['title']}',
                     style: Theme.of(context).textTheme.bodyLarge,
-                    maxLines: 4,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),

@@ -25,7 +25,8 @@ class NewsLayout extends StatelessWidget {
             actions: [
               IconButton(
                   onPressed: () {
-                    navigateTo(context, const Search());
+                    navigateTo(context, const Search()
+                    );
                   },
                   icon: const Icon(
                     Icons.search,

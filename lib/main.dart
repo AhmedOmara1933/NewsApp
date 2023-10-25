@@ -8,7 +8,6 @@ void main()
 {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
-
   runApp(const AppRoot());
 }
 

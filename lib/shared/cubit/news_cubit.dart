@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_project/modules/business.dart';
 import 'package:news_project/modules/science.dart';
@@ -36,6 +35,7 @@ class NewsCubit extends Cubit<NewsState> {
   List<dynamic> business = [];
   List<dynamic> science = [];
   List<dynamic> sports = [];
+  List<dynamic> search = [];
 
   void getBusinessData() {
     emit(AppGetBusinessLoadingState());
@@ -79,6 +79,21 @@ class NewsCubit extends Cubit<NewsState> {
     });
   }
 
+  void getSearchData({required String value}) {
+    emit(AppGetSearchLoadingState());
+    DioHelper.getData(
+        url: 'v2/everything',
+        query: {
+      'apiKey': '049c1660a02b492d8d3b37b503608683',
+      'q': value
+    }
+    ).then((value) {
+      emit(AppGetSearchSuccessState());
+      search = value.data['articles'];
+    }).catchError((error) {
+      emit(AppGetSearchErrorState());
+    });
+  }
 
 
 
