@@ -7,7 +7,6 @@ import '../shared/components/components/news_article.dart';
 
 
 
-// ignore: must_be_immutable
 class Science extends StatelessWidget {
   const Science({super.key});
 

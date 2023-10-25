@@ -7,7 +7,6 @@ import 'package:news_project/modules/sports.dart';
 import 'package:news_project/shared/cubit/news_state.dart';
 import '../network/remote/dio_helper.dart';
 
-
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsInitial());
 
