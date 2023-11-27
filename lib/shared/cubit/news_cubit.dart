@@ -16,12 +16,6 @@ class NewsCubit extends Cubit<NewsState> {
     const Science(),
     const Settings()
   ];
-  List<String> titles = [
-    'Business',
-    'Sports  ',
-    'Science ',
-    'Settings',
-  ];
 
 //todo//////////////////////////////////////////////////////////////////////
   int currentIndex = 0;

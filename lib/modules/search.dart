@@ -7,6 +7,8 @@ import 'package:news_project/shared/components/components/textFormField.dart';
 import 'package:news_project/shared/cubit/news_cubit.dart';
 import 'package:news_project/shared/cubit/news_state.dart';
 
+import '../layout/news_layout.dart';
+
 class Search extends StatelessWidget {
   const Search({super.key});
 
@@ -21,9 +23,14 @@ class Search extends StatelessWidget {
         var list=cubit.search;
         return Scaffold(
           appBar: AppBar(
-            leading: const Icon(
-              Icons.arrow_back_ios_sharp,
-              color: Colors.black,
+            leading: GestureDetector(
+              onTap: (){
+                Navigator.pop(context,MaterialPageRoute(builder: (context) => NewsLayout(),));
+              },
+              child: const Icon(
+                Icons.arrow_back_ios_sharp,
+                color: Colors.black,
+              ),
             ),
           ),
           body: Column(
